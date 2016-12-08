@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+import {connect} from 'react-redux';
+import * as actionCreators from '../action_creators';
 
-class App extends Component {
+export default class App extends Component {
   render() {
     return (
       <div className="app">
@@ -11,6 +13,11 @@ class App extends Component {
           <div className="secret-sauce">
             <h2>A Starting Point</h2>
             <p>This app serves as a starting point for applications powered by React and Redux. It also includes Sass, gh-pages deployment, and a cors-anywhere dev proxy server.</p>
+
+            <button onClick={this.props.decrement}><h1>-</h1></button>
+            <span><h1>{this.props.count}</h1></span>
+            <button onClick={this.props.increment}><h1>+</h1></button>
+
           </div>
         </div>
         <footer>Copyright 2016 Gordon Doskas</footer>
@@ -19,4 +26,13 @@ class App extends Component {
   }
 }
 
-export default App;
+function mapStateToProps(state) {
+  return {
+    count: state.count
+  }
+}
+
+export const AppContainer = connect(
+  mapStateToProps,
+  actionCreators
+)(App);
