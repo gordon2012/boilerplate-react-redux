@@ -20,6 +20,8 @@ $break-lg-desktop: 1800px
     @media (min-width: $break-lg-desktop)
         @content
 
+$grey-200: #EEEEEE
+$grey-600: #757575
 
 body
     margin: 0
@@ -29,28 +31,31 @@ h1
     padding: 16px 8px
     text-align: center
 
+header, footer
+    background: $grey-600
+    color: white
+
+footer
+    padding: 8px 0
+    display: flex
+    justify-content: center
+
 .app
-    background: #efefef
+    background: $grey-200
     display: flex
     min-height: 100vh
     flex-direction: column
 
-.content
-    background: white
+.content-wrap
     flex: 1
-
-    max-width: calc(#{$break-laptop} - 32px)
-    margin: 0 auto
-    padding: 16px
-
-footer
-    padding: 8px 0
-
     display: flex
     justify-content: center
 
+.content
+    background: white
+    flex-basis: calc(#{$break-laptop} - 32px)
+    padding: 16px
 
-.secret-sauce
     h2
         border-left: 4px solid black
         padding-left: 16px

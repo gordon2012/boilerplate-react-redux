@@ -9,8 +9,8 @@ export default class App extends Component {
         <header>
           <h1>Boilerplate: React Redux</h1>
         </header>
-        <div className="content">
-          <div className="secret-sauce">
+        <div className="content-wrap">
+          <div className="content">
             <h2>A Starting Point</h2>
             <p>This app serves as a starting point for applications powered by React and Redux. It also includes Sass, gh-pages deployment, and a cors-anywhere dev proxy server.</p>
 
